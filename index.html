@@ -10,16 +10,37 @@
       background-size: cover;
     }
     table {
-      border-collapse: collapse;
+      border-collapse: collapse; 
     }
     th, td {
-      border: 2px solid black;
       padding: 10px;
       font-family: Helvetica, sans-serif
     }
-    th, td {
-      background-color: #f2f2f2;
+    td {
+      vertical-align: auto;
+      text-align: middle;
     }
+    tr {
+      text-align: center;
+    }
+    th {
+      background-color: #861F41;
+      color:#f2f2f2;
+    }
+    
+    table tr:last-child td:first-child {
+    	border-bottom-left-radius: 10px;
+    }
+    table tr:last-child td:last-child {
+    	border-bottom-right-radius: 10px;
+    }
+    table tr:first-child th:first-child {
+    	border-top-left-radius: 10px;
+    }
+    table tr:first-child th:last-child {
+    	border-top-right-radius: 10px;
+    }
+    
   </style>
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 </head>
@@ -59,6 +80,7 @@
     totalCalculation(jun);
 
 
+
     var total = totals;
 
     var rReceived = 64.06;
@@ -78,7 +100,7 @@
       document.write(variable);
     }
   </script>
-
+  <p></p>
   <table>
     <tr>
       <th>Mate</th>
@@ -92,7 +114,7 @@
       <th>May 2023</th>
       <th>Jun 2023</th>
     </tr>
-    <tr>
+    <tr bgcolor="#ffffff">
       <td>Reagan</td>
       <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(oct)</script></a>&#x2705;</td>
       <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(nov)</script></a></td>
@@ -104,7 +126,7 @@
       <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(may)</script></a></td>
       <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(jun)</script></a></td>
     </tr>
-    <tr>
+    <tr bgcolor="#d6d6d6">
       <td>Zach</td>
       <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(oct)</script></a>&#x2705;</td>
       <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(nov)</script></a></td>
@@ -116,7 +138,7 @@
       <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(may)</script></a></td>
       <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(jun)</script></a></td>
     </tr>
-    <tr>
+    <tr bgcolor="#ffffff">
       <td>Hailey</td>
       <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(oct)</script></a>&#x2705;</td>
       <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(nov)</script></a>&#x2705;</td>
@@ -137,19 +159,19 @@
       <th>Total Amount Received</th>
       <th>Net Amount</th>
     </tr>
-    <tr>
+    <tr bgcolor="#ffffff">
       <td>Reagan</td>
       <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(total)</script></a></td>
       <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(rReceived)</script></a></td>
       <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(rNet)</script></a></td>
     </tr>
-    <tr>
+    <tr bgcolor="#d6d6d6">
       <td>Zach</td>
       <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(total)</script></a></td>
       <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(zReceived)</script></a></td>
       <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(zNet)</script></a></td>
     </tr>
-    <tr>
+    <tr bgcolor="#ffffff">
       <td>Hailey</td>
       <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(total)</script></a></td>
       <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(hReceived)</script></a></td>
@@ -162,7 +184,8 @@
   height="1000"
   />
   <p></p>
-  <img src="images/stephen.jpg"
+  <img 
+  src="images/stephen.jpg"
   width="300"
   height="200"
   />
