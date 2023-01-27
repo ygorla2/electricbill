@@ -5,12 +5,13 @@
   <style>
     body {
       background-color: #861F41;
-      background-image: url("https://media.licdn.com/dms/image/C4E03AQFP0XPgQMfjxg/profile-displayphoto-shrink_800_800/0/1636427567815?e=2147483647&v=beta&t=p9ktgFQnId3vVRQpEKBnowuc6revbXY6gwzhSbJcW5I");
       background-repeat: repeat;
       background-size: cover;
     }
     table {
       border-collapse: collapse; 
+      margin-left: auto;
+      margin-right: auto;
     }
     th, td {
       padding: 10px;
@@ -19,8 +20,10 @@
     td {
       vertical-align: auto;
       text-align: middle;
+      
     }
     tr {
+      vertical-align: auto;
       text-align: center;
     }
     th {
@@ -40,7 +43,33 @@
     table tr:first-child th:last-child {
     	border-top-right-radius: 10px;
     }
+
+    .div-1 {
+      width: "100%";
+      background-color: #C64600;
+      padding-top: 150px;
+      padding-bottom:150px;
+    }
+    .div-2 {
+      padding-top: 150px;
+      padding-bottom:150px;
+    }
+    .div-3 {
+      width: "100%";
+      background-color: #861F41;
+      animation-name: hokies;
+      animation-iteration-count: infinite;
+    }
+    .div-4 {
+      padding-top: 150px;
+      padding-bottom:150px;
+    }
     
+    @keyframes hokies {
+      from {background-color: #861F41;}
+      to {background-color: #C64600;}
+    }
+
   </style>
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 </head>
@@ -101,99 +130,116 @@
     }
   </script>
   <p></p>
-  <table>
-    <tr>
-      <th>Mate</th>
-      <th>Oct 2022</th>
-      <th>Nov 2022</th>
-      <th>Dec 2022</th>
-      <th>Jan 2023</th>
-      <th>Feb 2023</th>
-      <th>Mar 2023</th>
-      <th>Apr 2023</th>
-      <th>May 2023</th>
-      <th>Jun 2023</th>
-    </tr>
-    <tr bgcolor="#ffffff">
-      <td>Reagan</td>
-      <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(oct)</script></a>&#x2705;</td>
-      <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(nov)</script></a></td>
-      <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(dec)</script></a>&#x2705;</td>
-      <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(jan)</script></a></td>
-      <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(feb)</script></a></td>
-      <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(mar)</script></a></td>
-      <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(apr)</script></a></td>
-      <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(may)</script></a></td>
-      <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(jun)</script></a></td>
-    </tr>
-    <tr bgcolor="#d6d6d6">
-      <td>Zach</td>
-      <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(oct)</script></a>&#x2705;</td>
-      <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(nov)</script></a></td>
-      <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(dec)</script></a></td>
-      <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(jan)</script></a></td>
-      <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(feb)</script></a></td>
-      <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(mar)</script></a></td>
-      <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(apr)</script></a></td>
-      <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(may)</script></a></td>
-      <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(jun)</script></a></td>
-    </tr>
-    <tr bgcolor="#ffffff">
-      <td>Hailey</td>
-      <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(oct)</script></a>&#x2705;</td>
-      <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(nov)</script></a>&#x2705;</td>
-      <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(dec)</script></a>&#x2705;</td>
-      <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(jan)</script></a>&#x2705;</td>
-      <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(feb)</script></a></td>
-      <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(mar)</script></a></td>
-      <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(apr)</script></a></td>
-      <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(may)</script></a></td>
-      <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(jun)</script></a></td>
-    </tr>
-  </table>
-  <p></p>
-  <table>
-    <tr>
-      <th>Mate</th>
-      <th>Total Amount Required</th>
-      <th>Total Amount Received</th>
-      <th>Net Amount</th>
-    </tr>
-    <tr bgcolor="#ffffff">
-      <td>Reagan</td>
-      <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(total)</script></a></td>
-      <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(rReceived)</script></a></td>
-      <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(rNet)</script></a></td>
-    </tr>
-    <tr bgcolor="#d6d6d6">
-      <td>Zach</td>
-      <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(total)</script></a></td>
-      <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(zReceived)</script></a></td>
-      <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(zNet)</script></a></td>
-    </tr>
-    <tr bgcolor="#ffffff">
-      <td>Hailey</td>
-      <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(total)</script></a></td>
-      <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(hReceived)</script></a></td>
-      <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(hNet)</script></a></td>
-    </tr>
-  </table>
-  <img src="images/ramzy.gif"
-  style="float:right"
-  width="1000"
-  height="1000"
-  />
-  <p></p>
-  <img 
-  src="images/stephen.jpg"
-  width="300"
-  height="200"
-  />
-  <p></p>
-  <img src="images/slushy.jpg"
-  width="300"
-  height="600"
-  />
+  <div class="div-1">
+    <p></p>
+    <table>
+      <tr>
+        <th>Mate</th>
+        <th>Oct 2022</th>
+        <th>Nov 2022</th>
+        <th>Dec 2022</th>
+        <th>Jan 2023</th>
+        <th>Feb 2023</th>
+        <th>Mar 2023</th>
+        <th>Apr 2023</th>
+        <th>May 2023</th>
+        <th>Jun 2023</th>
+      </tr>
+      <tr bgcolor="#ffffff">
+        <td>Reagan</td>
+        <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(oct)</script></a>&#x2705;</td>
+        <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(nov)</script></a></td>
+        <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(dec)</script></a>&#x2705;</td>
+        <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(jan)</script></a></td>
+        <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(feb)</script></a></td>
+        <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(mar)</script></a></td>
+        <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(apr)</script></a></td>
+        <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(may)</script></a></td>
+        <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(jun)</script></a></td>
+      </tr>
+      <tr bgcolor="#d6d6d6">
+        <td>Zach</td>
+        <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(oct)</script></a>&#x2705;</td>
+        <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(nov)</script></a></td>
+        <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(dec)</script></a></td>
+        <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(jan)</script></a></td>
+        <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(feb)</script></a></td>
+        <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(mar)</script></a></td>
+        <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(apr)</script></a></td>
+        <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(may)</script></a></td>
+        <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(jun)</script></a></td>
+      </tr>
+      <tr bgcolor="#ffffff">
+        <td>Hailey</td>
+        <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(oct)</script></a>&#x2705;</td>
+        <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(nov)</script></a>&#x2705;</td>
+        <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(dec)</script></a>&#x2705;</td>
+        <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(jan)</script></a>&#x2705;</td>
+        <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(feb)</script></a></td>
+        <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(mar)</script></a></td>
+        <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(apr)</script></a></td>
+        <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(may)</script></a></td>
+        <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(jun)</script></a></td>
+      </tr>
+    </table>
+    <p></p>
+    <table>
+      <tr>
+        <th>Mate</th>
+        <th>Total Amount Required</th>
+        <th>Total Amount Received</th>
+        <th>Net Amount</th>
+      </tr>
+      <tr bgcolor="#ffffff">
+        <td>Reagan</td>
+        <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(total)</script></a></td>
+        <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(rReceived)</script></a></td>
+        <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(rNet)</script></a></td>
+      </tr>
+      <tr bgcolor="#d6d6d6">
+        <td>Zach</td>
+        <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(total)</script></a></td>
+        <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(zReceived)</script></a></td>
+        <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(zNet)</script></a></td>
+      </tr>
+      <tr bgcolor="#ffffff">
+        <td>Hailey</td>
+        <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(total)</script></a></td>
+        <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(hReceived)</script></a></td>
+        <td><a href="https://venmo.com/u/saigorla">$<script>docWrite(hNet)</script></a></td>
+      </tr>
+    </table>
+    <p></p>
+  </div>
+  <div>
+    <img src="https://media.licdn.com/dms/image/C4E03AQFP0XPgQMfjxg/profile-displayphoto-shrink_800_800/0/1636427567815?e=2147483647&v=beta&t=p9ktgFQnId3vVRQpEKBnowuc6revbXY6gwzhSbJcW5I"
+    width="100%"
+    height="700px"
+    />
+  </div>
+  <div class="div-3" style="display: flex; justify-content: center;">
+    <h1 style="font-size: 100px; text-align: center; color:#ffffff">
+      The Pyramid
+      Featuring. Ramzy Saffarini
+    </h1>
+    <img src="images/ramzy.gif"
+    style="float:inline-end"
+    width="1000"
+    height="1000"
+    />
+  </div>
+  <div>
+    <img src="images/stephen.jpg"
+    width="100%"
+    height="500px"
+    />
+  </div>
+  <div>
+    <img src="images/slushy.jpg"
+    width="100%"
+    height="500px"
+    />
+  </div>
 
 </body>
 </html>
