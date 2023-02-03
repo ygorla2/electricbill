@@ -1,34 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Electric Bill</title>
   <script defer src="js/slide.js"></script>
+  <script src="js/table.js"></script>
   <style>
     body {
-      background-color: #861F41;
-      background-repeat: repeat;
-      background-size: cover;
+      background-color: #ffffff;
+      background-image: linear-gradient(90deg, #861F41, #C64600, #C64600, #E87722);
+      background-size: 300% 300%;
+      /*animation: bgAnimatedGradient 15s infinite linear;*/
       width: 100vw;
       height: 100vh;
-      display: flexbox;
-      justify-content: center;
-      align-items: center;
       margin: 0;
       padding: 0;
       overflow-x: hidden;
     }
+
+    /*@keyframes bgAnimatedGradient {
+      0%{
+        background-position: 0 85%;
+      }
+      50%{
+        background-position: 100% 20%;
+      }
+      100%{
+        background-position: 0% 85%;
+      }
+    }*/
+
     table {
       border-collapse: collapse; 
       margin-left: auto;
       margin-right: auto;
     }
+
     th, td {
       padding: 10px;
     }
     td {
       vertical-align: auto;
       text-align: middle;
-      
+    }
+
+    @media (max-width: 480px) {
+      table {
+        border-collapse: collapse; 
+        margin-left: auto;
+        margin-right: auto;
+        width: 100px;
+      }
+    }
+    @media (max-width: 480px) {
+      th, td {
+        padding: 4px;
+        width: 7px;
+        font-size: 7px;
+      }
     }
     tr {
       vertical-align: auto;
@@ -53,8 +84,38 @@
     }
 
     div {
-      display: grid;
+      display: flex;
+      flex-wrap: nowrap;
       place-items: center;
+      align-content: center;
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+    }
+
+    .electric {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-content: center;
+      padding-top: 120px;
+      padding-bottom: 120px;
+    }
+
+    @media (max-width: 480px) {
+      .electric {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding-top: 60px;
+        padding-bottom: 60px;
+      }
+    }
+
+    .ramzy {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
       align-content: center;
     }
     
@@ -62,13 +123,122 @@
     opacity: 0;
     filter: blur(5px);
     transform: translateX(-100%);
-    transition: all 1s;
+    transition: all 1.5s;
     }
 
     .show {
       opacity: 1;
       filter: blur(0);
-      transform: translateY(0);
+      transform: translateX(0);
+    }
+
+    .people {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      margin: 0;
+      padding: 0;
+      align-content: flex-start;
+      gap: 2em;
+    }
+
+    .image-people {
+      width: 40%;
+      height: 1000px;
+    }
+
+    @media (max-width: 480px) {
+      .image-people {
+        height: 200px;
+      }
+    }
+
+    h1 {
+      font-size: 150px;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 30px;
+      }
+    }
+
+    .rampad {
+      padding-left: 10px;
+    }
+
+    @media (max-width: 480px) {
+      .rampad {
+        padding-left: 30px;
+      }
+    }
+
+    .savpad {
+      padding-left: 30px;
+    }
+
+    @media (max-width: 480px) {
+      .savpad {
+        padding-left: 20px;
+      }
+    }
+
+    .title-bill {
+      font-size: 100px;
+      text-align: center;
+    }
+
+    @media (max-width: 480px) {
+      .title-bill {
+        font-size: 40px;
+      }
+    }
+
+    .title-ramzy {
+      font-size: 100px; 
+      text-align: center;
+    }
+
+    @media (max-width: 480px) {
+      .title-ramzy {
+        font-size: 40px;
+      }
+    }
+
+    .zach {
+      width: 100%;
+      height: 700px;
+    }
+
+    @media (max-width: 480px) {
+      .zach {
+        width: 100%;
+        height: 200px;
+      }
+    }
+
+    .slushy {
+      width: 100%;
+      height: 500px;
+    }
+
+    @media (max-width: 480px) {
+      .slushy {
+        width: 100%;
+        height: 100px;
+      }
+    }
+
+    .stephen {
+      width: 100%;
+      height: 500px;
+    }
+
+    @media (max-width: 480px) {
+      .stephen {
+        width: 100%;
+        height: 100px;
+      }
     }
 
     @media(prefer-reduced-motion) {
@@ -83,82 +253,27 @@
     }
 
     @font-face {
-      font-family: OpenSansSemiBold;
-      src: url(fonts/OpenSans/OpenSans-SemiBold.ttf);
+      font-family: JakartaSansExtraBold;
+      src: url(fonts/PlusJakartaSans/PlusJakartaSans-ExtraBold.woff2);
     }
 
     @font-face {
-      font-family: OpenSansRegular;
-      src: url(fonts/OpenSans/OpenSans-Regular.ttf);
+      font-family: JakartaSansSemiBold;
+      src: url(fonts/PlusJakartaSans/PlusJakartaSans-SemiBold.woff2);
     }
     @font-face {
-      font-family: OpenSansLight;
-      src: url(fonts/OpenSans/OpenSans-Light.ttf);
+      font-family: JakartaSansRegular;
+      src: url(fonts/PlusJakartaSans/PlusJakartaSans-Regular.woff2);
     }
 
   </style>
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 <body>
-  <script>
-    var oct = 21.79;
-    var nov = 33.55;
-    var dec = 42.27;
-    var jan = 36.85;
-    var feb = "TBD";
-    var mar = "TBD";
-    var apr = "TBD";
-    var may = "TBD";
-    var jun = "TBD";
-
-    var totals = 0;
-
-    function totalCalculation(month)
-    {
-      if (typeof month == "number")
-      {
-        totals += month;
-      }
-
-      return totals;
-    }
-
-
-    totalCalculation(oct);
-    totalCalculation(nov);
-    totalCalculation(dec);
-    totalCalculation(jan);
-    totalCalculation(feb);
-    totalCalculation(mar);
-    totalCalculation(apr);
-    totalCalculation(may);
-    totalCalculation(jun);
-
-
-
-    var total = totals;
-
-    var rReceived = 64.06;
-    var rNet = (total - rReceived);
-    rNet = rNet.toFixed(2);
-
-    var zReceived = 21.79;
-    var zNet = (total - zReceived);
-    zNet = zNet.toFixed(2);
-
-    var hReceived = 134.46;
-    var hNet = (total - hReceived);
-    hNet = hNet.toFixed(2);
-
-    function docWrite(variable)
-    {
-      document.write(variable);
-    }
-  </script>
-  <div class="hidden" style="background-color: #C64600; padding-top: 120px; padding-bottom:120px;">
-    <h1 style="text-align:center; font-size: 100px; color:#ffffff; font-family: OpenSansSemiBold;">The Electric Bill Ft. Memes</h1>
+  <div class="hidden electric">
+    <h1 class= "title-bill" style="color:#ffffff; font-family: JakartaSansExtraBold;">The Electric Bill Ft. Memes</h1>
     <table>
-      <tr style="font-family: OpenSansSemiBold;">
+      <tr style="font-family: JakartaSansExtraBold;">
         <th>Mate</th>
         <th>Oct 2022</th>
         <th>Nov 2022</th>
@@ -170,100 +285,137 @@
         <th>May 2023</th>
         <th>Jun 2023</th>
       </tr>
-      <tr bgcolor="#ffffff">
-        <td style="font-family: OpenSansSemiBold;">Reagan</td>
-        <td style="font-family: OpenSansRegular;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(oct)</script></a>&#x2705;</td>
-        <td style="font-family: OpenSansRegular;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(nov)</script></a></td>
-        <td style="font-family: OpenSansRegular;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(dec)</script></a>&#x2705;</td>
-        <td style="font-family: OpenSansRegular;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(jan)</script></a></td>
-        <td style="font-family: OpenSansRegular;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(feb)</script></a></td>
-        <td style="font-family: OpenSansRegular;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(mar)</script></a></td>
-        <td style="font-family: OpenSansRegular;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(apr)</script></a></td>
-        <td style="font-family: OpenSansRegular;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(may)</script></a></td>
-        <td style="font-family: OpenSansRegular;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(jun)</script></a></td>
+      <tr style="background-color: #ffffff;">
+        <td style="font-family: JakartaSansExtraBold;">Reagan</td>
+        <td style="font-family: JakartaSansSemiBold;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(oct)</script></a>&#x2705;</td>
+        <td style="font-family: JakartaSansSemiBold;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(nov)</script></a></td>
+        <td style="font-family: JakartaSansSemiBold;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(dec)</script></a>&#x2705;</td>
+        <td style="font-family: JakartaSansSemiBold;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(jan)</script></a></td>
+        <td style="font-family: JakartaSansSemiBold;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(feb)</script></a></td>
+        <td style="font-family: JakartaSansSemiBold;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(mar)</script></a></td>
+        <td style="font-family: JakartaSansSemiBold;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(apr)</script></a></td>
+        <td style="font-family: JakartaSansSemiBold;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(may)</script></a></td>
+        <td style="font-family: JakartaSansSemiBold;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(jun)</script></a></td>
       </tr>
-      <tr bgcolor="#d6d6d6">
-        <td style="font-family: OpenSansSemiBold;">Zach</td>
-        <td style="font-family: OpenSansRegular;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(oct)</script></a>&#x2705;</td>
-        <td style="font-family: OpenSansRegular;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(nov)</script></a></td>
-        <td style="font-family: OpenSansRegular;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(dec)</script></a></td>
-        <td style="font-family: OpenSansRegular;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(jan)</script></a></td>
-        <td style="font-family: OpenSansRegular;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(feb)</script></a></td>
-        <td style="font-family: OpenSansRegular;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(mar)</script></a></td>
-        <td style="font-family: OpenSansRegular;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(apr)</script></a></td>
-        <td style="font-family: OpenSansRegular;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(may)</script></a></td>
-        <td style="font-family: OpenSansRegular;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(jun)</script></a></td>
+      <tr style="background-color: #d6d6d6;">
+        <td style="font-family: JakartaSansExtraBold;">Zach</td>
+        <td style="font-family: JakartaSansSemiBold;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(oct)</script></a>&#x2705;</td>
+        <td style="font-family: JakartaSansSemiBold;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(nov)</script></a></td>
+        <td style="font-family: JakartaSansSemiBold;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(dec)</script></a></td>
+        <td style="font-family: JakartaSansSemiBold;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(jan)</script></a></td>
+        <td style="font-family: JakartaSansSemiBold;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(feb)</script></a></td>
+        <td style="font-family: JakartaSansSemiBold;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(mar)</script></a></td>
+        <td style="font-family: JakartaSansSemiBold;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(apr)</script></a></td>
+        <td style="font-family: JakartaSansSemiBold;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(may)</script></a></td>
+        <td style="font-family: JakartaSansSemiBold;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(jun)</script></a></td>
       </tr>
-      <tr bgcolor="#ffffff">
-        <td style="font-family: OpenSansSemiBold;">Hailey</td>
-        <td style="font-family: OpenSansRegular;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(oct)</script></a>&#x2705;</td>
-        <td style="font-family: OpenSansRegular;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(nov)</script></a>&#x2705;</td>
-        <td style="font-family: OpenSansRegular;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(dec)</script></a>&#x2705;</td>
-        <td style="font-family: OpenSansRegular;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(jan)</script></a>&#x2705;</td>
-        <td style="font-family: OpenSansRegular;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(feb)</script></a></td>
-        <td style="font-family: OpenSansRegular;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(mar)</script></a></td>
-        <td style="font-family: OpenSansRegular;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(apr)</script></a></td>
-        <td style="font-family: OpenSansRegular;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(may)</script></a></td>
-        <td style="font-family: OpenSansRegular;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(jun)</script></a></td>
+      <tr style="background-color: #ffffff;">
+        <td style="font-family: JakartaSansExtraBold;">Hailey</td>
+        <td style="font-family: JakartaSansSemiBold;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(oct)</script></a>&#x2705;</td>
+        <td style="font-family: JakartaSansSemiBold;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(nov)</script></a>&#x2705;</td>
+        <td style="font-family: JakartaSansSemiBold;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(dec)</script></a>&#x2705;</td>
+        <td style="font-family: JakartaSansSemiBold;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(jan)</script></a>&#x2705;</td>
+        <td style="font-family: JakartaSansSemiBold;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(feb)</script></a></td>
+        <td style="font-family: JakartaSansSemiBold;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(mar)</script></a></td>
+        <td style="font-family: JakartaSansSemiBold;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(apr)</script></a></td>
+        <td style="font-family: JakartaSansSemiBold;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(may)</script></a></td>
+        <td style="font-family: JakartaSansSemiBold;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(jun)</script></a></td>
       </tr>
     </table>
     <p></p>
     <table>
-      <tr style="font-family: OpenSansSemiBold;">
+      <tr style="font-family: JakartaSansExtraBold;">
         <th>Mate</th>
         <th>Total Amount Required</th>
         <th>Total Amount Received</th>
         <th>Net Amount</th>
       </tr>
       <tr bgcolor="#ffffff">
-        <td style="font-family: OpenSansSemiBold;">Reagan</td>
-        <td style="font-family: OpenSansRegular;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(total)</script></a></td>
-        <td style="font-family: OpenSansRegular;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(rReceived)</script></a></td>
-        <td style="font-family: OpenSansRegular;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(rNet)</script></a></td>
+        <td style="font-family: JakartaSansExtraBold;">Reagan</td>
+        <td style="font-family: JakartaSansSemiBold;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(total)</script></a></td>
+        <td style="font-family: JakartaSansSemiBold;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(rReceived)</script></a></td>
+        <td style="font-family: JakartaSansSemiBold;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(rNet)</script></a></td>
       </tr>
       <tr bgcolor="#d6d6d6">
-        <td style="font-family: OpenSansSemiBold;">Zach</td>
-        <td style="font-family: OpenSansRegular;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(total)</script></a></td>
-        <td style="font-family: OpenSansRegular;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(zReceived)</script></a></td>
-        <td style="font-family: OpenSansRegular;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(zNet)</script></a></td>
+        <td style="font-family: JakartaSansExtraBold;">Zach</td>
+        <td style="font-family: JakartaSansSemiBold;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(total)</script></a></td>
+        <td style="font-family: JakartaSansSemiBold;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(zReceived)</script></a></td>
+        <td style="font-family: JakartaSansSemiBold;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(zNet)</script></a></td>
       </tr>
       <tr bgcolor="#ffffff">
-        <td style="font-family: OpenSansSemiBold;">Hailey</td>
-        <td style="font-family: OpenSansRegular;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(total)</script></a></td>
-        <td style="font-family: OpenSansRegular;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(hReceived)</script></a></td>
-        <td style="font-family: OpenSansRegular;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(hNet)</script></a></td>
+        <td style="font-family: JakartaSansExtraBold;">Hailey</td>
+        <td style="font-family: JakartaSansSemiBold;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(total)</script></a></td>
+        <td style="font-family: JakartaSansSemiBold;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(hReceived)</script></a></td>
+        <td style="font-family: JakartaSansSemiBold;"><a href="https://venmo.com/u/saigorla">$<script>docWrite(hNet)</script></a></td>
       </tr>
     </table>
-    <p></p>
   </div>
   <div class="hidden">
-    <img src="https://media.licdn.com/dms/image/C4E03AQFP0XPgQMfjxg/profile-displayphoto-shrink_800_800/0/1636427567815?e=2147483647&v=beta&t=p9ktgFQnId3vVRQpEKBnowuc6revbXY6gwzhSbJcW5I"
-    width="100%"
-    height="700px"
+    <img 
+    class="zach"
+    src="https://media.licdn.com/dms/image/C4E03AQFP0XPgQMfjxg/profile-displayphoto-shrink_800_800/0/1636427567815?e=2147483647&v=beta&t=p9ktgFQnId3vVRQpEKBnowuc6revbXY6gwzhSbJcW5I"
     />
   </div>
-  <div class="hidden" display="block" style="text-align: center;">
-    <h1 style="font-size: 100px; text-align: center; color:#ffffff">
-      The Pyramid
-      Featuring. Ramzy Saffarini
+  <div class="hidden ramzy">
+    <h1 class= "title-ramzy" style="font-family: JakartaSansExtraBold; color:#ffffff">
+      The Pyramid<br>Featuring. Ramzy Saffarini
     </h1>
     <img src="images/ramzy.gif"
-    width="1000"
-    height="1000"
+    width="50%"
+    height="auto"
     />
   </div>
   <div class="hidden">
-    <img src="images/stephen.jpg"
-    width="100%"
-    height="500px"
+    <img 
+    class="stephen"
+    src="images/stephen.jpg"
     />
   </div>
   <div class="hidden">
-    <img src="images/slushy.jpg"
-    width="100%"
-    height="500px"
+    <img 
+    class="slushy"
+    src="images/slushy.jpg"
     />
   </div>
-
+  <div class="hidden people">
+    <img id="frankTheTank" src="images/frank.jpg"
+    class="image-people"
+    />
+    <h1 style="padding-right: 10%; font-family: JakartaSansExtraBold; color: #ffffff;">
+      Frank<br>"The&nbspTank"<br>Naccarato
+    </h1>
+  </div>
+  <div class="hidden people">
+    <h1 class="savpad" style="font-family: JakartaSansExtraBold; color: #ffffff;">
+      Savvas<br>"The&nbspStephen"<br>Savvides
+    </h1>
+    <img id="savvasSavvides" src="images/savvas.png"
+    class="image-people"
+    />
+  </div>
+  <div class="hidden people">
+    <img id="curiousZach" src="images/zachcurious.png"
+    class="image-people"
+    />
+    <h1 style="padding-right: 2%; font-family: JakartaSansExtraBold; color: #ffffff;">
+      Zach<br>"The&nbspCurious"<br>Moas
+    </h1>
+  </div>
+  <div class="hidden people">
+    <h1 class= "rampad" style="font-family: JakartaSansExtraBold; color: #ffffff;">
+      Ramzy<br>"The&nbspLightskin"<br>Saffarini
+    </h1>
+    <img id="lightRamzy" src="images/ramzylight.png"
+    class="image-people"
+    />
+  </div>
+  <div class="hidden people">
+    <img id="asianKyle" src="images/kyle.png"
+    class="image-people"
+    />
+    <h1 style="padding-right: 10%; font-family:JakartaSansExtraBold; color: #ffffff;">
+      Kyle<br>"The&nbspAsian"<br>Seng
+    </h1>
+  </div>
 </body>
 </html>
