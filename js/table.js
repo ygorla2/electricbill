@@ -37,7 +37,7 @@ var rReceived = 64.06;
 var rNet = (total - rReceived);
 rNet = rNet.toFixed(2);
 
-var zReceived = 21.79;
+var zReceived = 134.46;
 var zNet = (total - zReceived);
 zNet = zNet.toFixed(2);
 
