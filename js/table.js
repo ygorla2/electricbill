@@ -16,6 +16,8 @@ function totalCalculation(month)
         totals += month;
     }
     
+    totals = totals.toFixed(2);
+    
     return totals;
 }
 
@@ -28,8 +30,6 @@ totalCalculation(mar);
 totalCalculation(apr);
 totalCalculation(may);
 totalCalculation(jun);
-
-
 
 var total = totals;
 
