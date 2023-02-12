@@ -33,7 +33,7 @@ totals = totals.toFixed(2);
 
 var total = totals;
 
-var rReceived = 64.06;
+var rReceived = 173.45;
 var rNet = (total - rReceived);
 rNet = rNet.toFixed(2);
 
